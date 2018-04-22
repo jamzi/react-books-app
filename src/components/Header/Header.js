@@ -6,6 +6,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Typography from 'material-ui/Typography';
 import Drawer from 'material-ui/Drawer';
 import List, { ListItem, ListItemText } from 'material-ui/List';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -38,18 +39,26 @@ class Header extends Component {
                         onClick={this.toggleDrawer}
                         onKeyDown={this.toggleDrawer}>
                         <List>
-                            <ListItem button>
-                                <ListItemText primary="Home" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemText primary="Search" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemText primary="Recommended" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemText primary="Bookshelves" />
-                            </ListItem>
+                            <NavLink to="/">
+                                <ListItem button>
+                                    <ListItemText primary="Home" />
+                                </ListItem>
+                            </NavLink>
+                            <NavLink to="/search">
+                                <ListItem button>
+                                    <ListItemText primary="Search" />
+                                </ListItem>
+                            </NavLink>
+                            <NavLink to="/recommended">
+                                <ListItem button>
+                                    <ListItemText primary="Recommended" />
+                                </ListItem>
+                            </NavLink>
+                            <NavLink to="/bookshelves">
+                                <ListItem button>
+                                    <ListItemText primary="Bookshelves" />
+                                </ListItem>
+                            </NavLink>
                         </List>
                     </div>
                 </Drawer>
